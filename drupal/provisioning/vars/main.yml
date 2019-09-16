@@ -10,7 +10,6 @@ php_default_version_debian: "7.2"
 php_packages_extra:
   - libapache2-mod-php{{ php_default_version_debian }}
 php_mysql_package: php{{ php_default_version_debian }}-mysql
-drupal_build_composer_project: false
 drupal_trusted_host_patterns: "^drupal$"
 
 

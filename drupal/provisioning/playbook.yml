@@ -34,3 +34,12 @@
     - geerlingguy.composer
     - geerlingguy.drush
     - geerlingguy.drupal
+
+  post_tasks:
+    - name: "Change permissions"
+      command: chown www-data:www-data -R /var/www/drupal/web/sites/default/files/
+      become: yes
+
+    - name: "Clear Drupal cache"
+      command: drush --root=/var/www/drupal/web/ cache-rebuild
+      notify: restart apache
